@@ -3,24 +3,24 @@
 declare(strict_types=1);
 
 namespace App\Presenters;
-
+use App\Model\ArticleManager;
 use Nette;
 
 final class HomepagePresenter extends Nette\Application\UI\Presenter
 {
 
-	private $database;
+	private ArticleManager $articleManager;
 
-	public function __construct(Nette\Database\Context $database)
+	public function __construct(ArticleManager $articleManager)
 	{
-		$this->database = $database;
+		$this->articleManager = $articleManager;
 	}
 
 	public function renderDefault(): void
 	{
-	$this->template->posts = $this->database->table('posts')
-		->order('created_at DESC')
-		->limit(5);
+		$this->template->posts = $this->articleManager
+			->getPublicArticles()
+			->limit(5);
 	}
 
 }
