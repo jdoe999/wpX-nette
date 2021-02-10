@@ -20,4 +20,5 @@ di:
 services:
 	router: App\Router\RouterFactory::createRouter
 	- App\Model\ArticleManager
+	- App\Model\GamesRepository
 	- App\Model\UserManager
