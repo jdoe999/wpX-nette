@@ -12,7 +12,7 @@ final class PostPresenter extends Nette\Application\UI\Presenter
 
 	private $database;
 	
-	public function __construct(Nette\Database\Context $database)
+	public function __construct(Nette\Database\Explorer $database)
 	{
 		$this->database = $database;
 	}

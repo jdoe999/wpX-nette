@@ -20,7 +20,4 @@ di:
 services:
 	router: App\Router\RouterFactory::createRouter
 	- App\Model\ArticleManager
-
-security:
-	users:
-		admin: secret
+	- App\Model\UserManager

@@ -10,9 +10,9 @@ class ArticleManager
 {
 	use Nette\SmartObject;
 
-	private Nette\Database\Context $database;
+	private Explorer $database;
 
-	public function __construct(Nette\Database\Context $database)
+	public function __construct(Explorer $database)
 	{
 		$this->database = $database;
 	}
@@ -22,5 +22,11 @@ class ArticleManager
 		return $this->database->table('posts')
 			->where('created_at < ', new \DateTime)
 			->order('created_at DESC');
+	}
+
+	public function get(int $postId)
+	{
+		return $this->database->table('posts')
+			->$get($postId);
 	}
 }
