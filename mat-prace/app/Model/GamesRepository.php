@@ -22,7 +22,6 @@ class GamesRepository
 			->order('created_at DESC');
     }
 
-    
     public function get(int $gameId) {
         return $this->database->table('games')
             ->get($gameId);
