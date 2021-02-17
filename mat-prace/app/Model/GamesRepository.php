@@ -22,13 +22,14 @@ class GamesRepository
 			->order('created_at DESC');
     }
 
-	public function getGenres()
-	{
-		return $this->database->query('SELECT ge.id_genre FROM genres ge LEFT JOIN games ga ON ge.id_genre = ga.id_genre');
-	}
     
     public function get(int $gameId) {
         return $this->database->table('games')
             ->get($gameId);
+    } 
+
+	public function getGenre(int $genreId) {
+        return $this->database->table('genres')
+            ->get($genreId);
     } 
 }
