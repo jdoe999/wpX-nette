@@ -24,6 +24,8 @@ class GamesPresenter extends Nette\Application\UI\Presenter
     {
         $this->template->games = $this->gamesRepository
             ->getGames();
+        $this->template->genres = $this->gamesRepository
+            ->getGenres();
         //->limit(5);
     }
 
@@ -34,6 +36,6 @@ class GamesPresenter extends Nette\Application\UI\Presenter
 			$this->errror('Stránka nebyla nalezena');
 		}
 		$this->template->game = $game;
-		$this->template->description = "lol";
+
     }
 }
