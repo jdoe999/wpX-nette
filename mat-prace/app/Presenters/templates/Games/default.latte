@@ -1,14 +1,19 @@
 {block content}
 	<h1 n:block="title">Můj blog</h1>
-
+	
 	{foreach $games as $game}
+	
+	
 	<div class="post">
-		<div class="date">{$game->created_at|date:'F j, Y'}</div>
-		<h2><a href="{link games:show $game->id_game}">{$game->name}</a></h2>
-		<h2>{$game->name}</h2>
 		
-		<div>{$game->description}</div>
+		<h2><a href="{link games:show $game->id_game}">{$game->name}</a></h2>
+		
+		<b>Description</b>: {$game->description} <br><br>
+		<b>Release date</b>: {$game->release_date|date:'F j, Y'} <br>
+		
+		
+		
+		
 	</div>
 	{/foreach}
-
 {/block}
