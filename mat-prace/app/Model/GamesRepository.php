@@ -15,8 +15,7 @@ class GamesRepository
 		$this->database = $database;
 	}
 
-	public function getGames()
-	{
+	public function getGames(){
 		return $this->database->table('games')
 			->where('created_at < ', new \DateTime)
 			->order('created_at DESC');
