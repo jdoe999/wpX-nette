@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Presenters;
+namespace App\AdminModule\Presenters;
 
 use Nette;
 
 
-class basePresenter extends Nette\Application\UI\Presenter
+class AdminBasePresenter extends Nette\Application\UI\Presenter
 {
 	protected $database;
 

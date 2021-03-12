@@ -2,8 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Presenters;
-use App\Model\ArticleManager;
+namespace App\FrontModule\Presenters;
 use Nette;
 
 final class HomepagePresenter extends Nette\Application\UI\Presenter
