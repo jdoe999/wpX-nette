@@ -16,18 +16,19 @@ class GamesRepository
 	}
 
 	public function getGames(){
-		return $this->database->table('games')
+		return $this->database->table('game')
 			->where('created_at < ', new \DateTime)
 			->order('created_at DESC');
     }
 
     public function get(int $gameId) {
-        return $this->database->table('games')
+        return $this->database->table('game')
             ->get($gameId);
     } 
 
 	public function getGenre(int $genreId) {
-        return $this->database->table('genres')
+        return $this->database->table('genre')
             ->get($genreId);
     } 
+
 }

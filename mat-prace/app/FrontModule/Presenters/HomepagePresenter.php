@@ -4,14 +4,13 @@ declare(strict_types=1);
 
 namespace App\FrontModule\Presenters;
 use Nette;
+use App\Model\ArticleManager;
 
 final class HomepagePresenter extends Nette\Application\UI\Presenter
 {
-
 	private ArticleManager $articleManager;
 
-	public function __construct(ArticleManager $articleManager)
-	{
+	public function __construct(ArticleManager $articleManager) {
 		$this->articleManager = $articleManager;
 	}
 

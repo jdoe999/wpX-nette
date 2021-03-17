@@ -6,9 +6,10 @@
 	
 	<div class="post">
 		
-		<h2><a href="{link games:show $game->id_game}">{$game->name}</a></h2>
+		<h2><a href="{link games:show $game->id}">{$game->name}</a></h2>
 		
 		<b>Description</b>: {$game->description} <br><br>
+		<b>Genre</b>: {$game->genre->desc} <br><br>
 		<b>Release date</b>: {$game->release_date|date:'F j, Y'} <br>
 		
 		

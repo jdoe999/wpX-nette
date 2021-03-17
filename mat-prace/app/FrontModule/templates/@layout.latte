@@ -11,11 +11,11 @@
 <body>
 	<ul class="navig">
 		<li><a n:href="Homepage:">Články</a></li>
-		{if $user->isLoggedIn()}
+	{*	{if $user->isLoggedIn()}
 			<li><a n:href="Sign:out">Odhlásit</a></li>
 		{else}
 			<li><a n:href="Sign:in">Přihlásit</a></li>
-		{/if}
+		{/if} *}
 			<li><a n:href="Games:">Games</a></li>
 	</ul>
 

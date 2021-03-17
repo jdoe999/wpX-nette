@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Presenters;
+namespace App\FrontModule\Presenters;
 
 use Nette;
 use App\Model\GamesRepository;
@@ -23,7 +23,6 @@ class GamesPresenter extends Nette\Application\UI\Presenter
     public function renderDefault(): void
     {
         $this->template->games = $this->gamesRepository->getGames();
-        $this->template->genres = $this->gamesRepository->getGenres();
         //->limit(5);
     }
 
