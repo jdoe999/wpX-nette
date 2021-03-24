@@ -19,7 +19,7 @@ final class PostPresenter extends Nette\Application\UI\Presenter
 
 	public function renderShow(int $postId): void
 	{
-		$post = $this->database->table('posts')->get($postId);
+		$post = $this->database->table('post')->get($postId);
 		if (!$post) {
 			$this->errror('Stránka nebyla nalezena');
 		}
@@ -86,10 +86,10 @@ final class PostPresenter extends Nette\Application\UI\Presenter
 		$postId = $this->getParameter('postId');
 	
 		if ($postId) {
-			$post = $this->database->table('posts')->get($postId);
+			$post = $this->database->table('post')->get($postId);
 			$post->update($values);
 		} else {
-			$post = $this->database->table('posts')->insert($values);
+			$post = $this->database->table('post')->insert($values);
 		}
 	
 		$this->flashMessage('Příspěvek byl úspěšně publikován.', 'success');
@@ -102,7 +102,7 @@ final class PostPresenter extends Nette\Application\UI\Presenter
 			$this->redirect('Sign:in');
 		}
 
-		$post = $this->database->table('posts')->get($postId);
+		$post = $this->database->table('post')->get($postId);
 		if (!$post) {
 			$this->error('Příspěvek nebyl nalezen');
 		}

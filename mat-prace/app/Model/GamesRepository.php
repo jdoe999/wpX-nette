@@ -26,6 +26,10 @@ class GamesRepository
             ->get($gameId);
     } 
 
+	public function getGenres() {
+        return $this->database->table('genre');
+    } 
+
 	public function getGenre(int $genreId) {
         return $this->database->table('genre')
             ->get($genreId);

@@ -23,6 +23,7 @@ class GamesPresenter extends Nette\Application\UI\Presenter
     public function renderDefault(): void
     {
         $this->template->games = $this->gamesRepository->getGames();
+        $this->template->genres2 = $this->gamesRepository->getGenres();
         //->limit(5);
     }
 
@@ -34,7 +35,7 @@ class GamesPresenter extends Nette\Application\UI\Presenter
 		}
 		$this->template->game = $game;
 
-        $genres = $this->gamesRepository->getGenre($game->id_genre);
+        $genres = $this->gamesRepository->getGenre($game->id);
         $this->template->genres = $genres;
     }
 }

@@ -1,6 +1,8 @@
 {block content}
 	<h1 n:block="title">Můj blog</h1>
 	
+
+	Žánry: {foreach $genres2 as $genre2}<a href="?genreId={$genre2->id}">{$genre2->desc}</a> {/foreach} 
 	{foreach $games as $game}
 	
 	
