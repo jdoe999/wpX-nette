@@ -35,7 +35,7 @@ class GamesRepository
             ->get($genreId);
     } 
 
-	function getGamesByGenreId($genreId){
+	public function getGamesByGenreId($genreId){
 		return $this->database->table('game')->where('genre_id =', $genreId);
 	}
 
