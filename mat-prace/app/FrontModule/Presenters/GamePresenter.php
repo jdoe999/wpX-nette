@@ -20,11 +20,15 @@ class GamesPresenter extends Nette\Application\UI\Presenter
     }
 
 
-    public function renderDefault(): void
+    public function renderDefault($genreId): void
     {
-        $this->template->games = $this->gamesRepository->getGames();
+        if(!empty($genreId)){
+            $this->template->games = $this->gamesRepository->getGamesByGenreId($genreId);
+        }else{
+            $this->template->games = $this->gamesRepository->getGames();
+        }
         $this->template->genres2 = $this->gamesRepository->getGenres();
-        //->limit(5);
+
     }
 
     public function renderShow(int $gameId): void
