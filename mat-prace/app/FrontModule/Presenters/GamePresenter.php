@@ -15,6 +15,7 @@ class GamesPresenter extends Nette\Application\UI\Presenter
 
     public function __construct(Nette\Database\Context $database, GamesRepository $gamesRepository)
     {
+        
         $this->database = $database;
         $this->gamesRepository = $gamesRepository;
     }

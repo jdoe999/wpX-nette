@@ -22,3 +22,4 @@ services:
 	- App\Model\ArticleManager
 	- App\Model\GamesRepository
 	- App\Model\UserManager
+

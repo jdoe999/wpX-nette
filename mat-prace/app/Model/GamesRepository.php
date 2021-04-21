@@ -12,6 +12,7 @@ class GamesRepository
 
 	public function __construct(Nette\Database\Explorer $database)
 	{
+	
 		$this->database = $database;
 	}
 
