@@ -1,0 +1,34 @@
+version: '3.7'
+
+services: 
+    webserver: 
+        image: nginx:latest
+        ports: 
+            - "80:80" 
+        volumes: 
+            - "./webroot:/var/www/matprace"
+            - "./.docker/nginx/conf.d:/etc/nginx/conf.d"
+    db:
+        restart: always
+        image: mysql:latest
+        volumes: 
+            - data2:/var/lib/mysql
+        environment: 
+            MYSQL_ROOT_PASSWORD: root
+    php:
+        build: ./.docker/php
+        volumes:
+            - "./webroot:/var/www/matprace"
+            - "./.docker/php/conf.d:/usr/local/etc/php/custom.d"
+        environment: 
+            PHP_INI_SCAN_DIR: /usr/local/etc/php/custom.d:/usr/local/etc/php/conf.d
+    adminer:
+        restart: always
+        image: adminer:latest
+        ports:
+            - 8080:8080
+
+volumes: 
+    data2:
+networks:
+    default:

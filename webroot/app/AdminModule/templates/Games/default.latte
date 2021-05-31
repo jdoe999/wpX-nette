@@ -1,0 +1,51 @@
+{block content}
+	
+	Žánry: {foreach $genres2 as $genre2} <a href="?genreId={$genre2->id}">{$genre2->desc}</a> {/foreach}  <br> 
+	  <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Výpis her</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example2" class="table table-bordered table-hover">
+                  <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Genre</th>
+                    <th>Release Date</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+
+	{foreach $games as $game}
+	
+	                <tr>
+                    <td><a href="{link games:show $game->id}">{$game->name}</a></td>
+                    <td>{$game->description}
+                    </td>
+                    <td>{$game->genre->desc}</td>
+                    <td>{$game->release_date|date:'F j, Y'}</td>
+					</tr>
+
+	{/foreach}
+	</tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+{/block}
