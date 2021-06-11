@@ -5,87 +5,87 @@ return array (
     'App\\AdminModule\\Presenters\\AdminBasePresenter' => 
     array (
       'file' => '/var/www/matprace/app/AdminModule/Presenters/AdminbasePresenter.php',
-      'time' => 1621417597,
+      'time' => 1622458567,
     ),
     'App\\AdminModule\\Presenters\\GamesPresenter' => 
     array (
       'file' => '/var/www/matprace/app/AdminModule/Presenters/GamesPresenter.php',
-      'time' => 1622106923,
+      'time' => 1622712587,
     ),
     'App\\AdminModule\\Presenters\\HomepagePresenter' => 
     array (
       'file' => '/var/www/matprace/app/AdminModule/Presenters/HomepagePresenter.php',
-      'time' => 1622106939,
+      'time' => 1622458567,
     ),
     'App\\AdminModule\\Presenters\\SignPresenter' => 
     array (
       'file' => '/var/www/matprace/app/AdminModule/Presenters/SignPresenter.php',
-      'time' => 1618390487,
+      'time' => 1622458567,
     ),
     'App\\Bootstrap' => 
     array (
       'file' => '/var/www/matprace/app/Bootstrap.php',
-      'time' => 1606403499,
+      'time' => 1622458567,
     ),
     'App\\FrontModule\\Presenters\\FrontBasePresenter' => 
     array (
       'file' => '/var/www/matprace/app/FrontModule/Presenters/FrontBasePresenter.php',
-      'time' => 1615971317,
+      'time' => 1622458567,
     ),
     'App\\FrontModule\\Presenters\\GamesPresenter' => 
     array (
       'file' => '/var/www/matprace/app/FrontModule/Presenters/GamePresenter.php',
-      'time' => 1618392268,
+      'time' => 1622458567,
     ),
     'App\\FrontModule\\Presenters\\HomepagePresenter' => 
     array (
       'file' => '/var/www/matprace/app/FrontModule/Presenters/HomepagePresenter.php',
-      'time' => 1618392289,
+      'time' => 1622458567,
     ),
     'App\\FrontModule\\Presenters\\PostPresenter' => 
     array (
       'file' => '/var/www/matprace/app/FrontModule/Presenters/PostPresenter.php',
-      'time' => 1618393464,
+      'time' => 1622632548,
     ),
     'App\\FrontModule\\Presenters\\SignPresenter' => 
     array (
       'file' => '/var/www/matprace/app/FrontModule/Presenters/SignPresenter.php',
-      'time' => 1618390675,
+      'time' => 1622458567,
     ),
     'App\\Model\\ArticleManager' => 
     array (
       'file' => '/var/www/matprace/app/Model/ArticleManager.php',
-      'time' => 1616576935,
+      'time' => 1622458567,
     ),
     'App\\Model\\GamesRepository' => 
     array (
       'file' => '/var/www/matprace/app/Model/GamesRepository.php',
-      'time' => 1618392257,
+      'time' => 1622712523,
     ),
     'App\\Model\\UserManager' => 
     array (
       'file' => '/var/www/matprace/app/Model/UserManager.php',
-      'time' => 1615370612,
+      'time' => 1622458567,
     ),
     'App\\Model\\DuplicateNameException' => 
     array (
       'file' => '/var/www/matprace/app/Model/UserManager.php',
-      'time' => 1615370612,
+      'time' => 1622458567,
     ),
     'App\\Presenters\\Error4xxPresenter' => 
     array (
       'file' => '/var/www/matprace/app/Presenters/Error4xxPresenter.php',
-      'time' => 1615370807,
+      'time' => 1622458567,
     ),
     'App\\Presenters\\ErrorPresenter' => 
     array (
       'file' => '/var/www/matprace/app/Presenters/ErrorPresenter.php',
-      'time' => 1615370807,
+      'time' => 1622458567,
     ),
     'App\\Router\\RouterFactory' => 
     array (
       'file' => '/var/www/matprace/app/Router/RouterFactory.php',
-      'time' => 1618389496,
+      'time' => 1622458567,
     ),
   ),
   1 => 

@@ -33,17 +33,23 @@ final class Templatefdc3a931e2 extends Latte\Runtime\Template
 	{
 		extract($this->params);
 		extract($ʟ_args);
+		echo "\n";
 		$this->renderBlock('name', get_defined_vars());
 		echo '
 <p>';
-		echo LR\Filters::escapeHtmlText($game->description) /* line 4 */;
+		echo LR\Filters::escapeHtmlText($game->description) /* line 5 */;
 		echo '</p>
-<h3> Distributor </h3> ';
-		echo LR\Filters::escapeHtmlText($game->distributor) /* line 5 */;
+<b> Distributor </b> ';
+		echo LR\Filters::escapeHtmlText($game->distributor) /* line 6 */;
+		echo ' <br>
+<b> ŽÁNR: </b> ';
+		echo LR\Filters::escapeHtmlText($game->genre->desc) /* line 7 */;
 		echo '
-<h3> ŽÁNR: </h3> ';
-		echo LR\Filters::escapeHtmlText($genres->desc) /* line 6 */;
-		echo ' !!!';
+
+<a href="';
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("edit", [$game->id]));
+		echo '"><button type="button" class="btn btn-info">Editovat Hru</button></a>
+';
 	}
 
 
@@ -52,7 +58,7 @@ final class Templatefdc3a931e2 extends Latte\Runtime\Template
 		extract($this->params);
 		extract($ʟ_args);
 		echo '<h1>';
-		echo LR\Filters::escapeHtmlText($game->name) /* line 2 */;
+		echo LR\Filters::escapeHtmlText($game->name) /* line 3 */;
 		echo '</h1>
 ';
 	}

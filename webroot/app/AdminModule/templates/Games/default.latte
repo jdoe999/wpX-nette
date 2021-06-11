@@ -1,6 +1,7 @@
 {block content}
 	
-	Žánry: {foreach $genres2 as $genre2} <a href="?genreId={$genre2->id}">{$genre2->desc}</a> {/foreach}  <br> 
+	Žánry: {foreach $genres2 as $genre2} <a href="?genreId={$genre2->id}">{$genre2->desc}</a> {/foreach}  <br>  <br>
+  <a n:href="Games:create" n:if="$user->isLoggedIn()"><button style="float:right" type="button" class="btn btn-primary">Přidat novou hru</button></a>
 	  <section class="content">
       <div class="container-fluid">
         <div class="row">

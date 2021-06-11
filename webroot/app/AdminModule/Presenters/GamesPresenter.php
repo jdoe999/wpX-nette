@@ -6,6 +6,7 @@ namespace App\AdminModule\Presenters;
 
 use Nette;
 use App\Model\GamesRepository;
+use Nette\Application\UI\Form;
 
 class GamesPresenter extends Nette\Application\UI\Presenter
 {
@@ -35,6 +36,7 @@ class GamesPresenter extends Nette\Application\UI\Presenter
 
     public function renderShow(int $gameId): void
     {
+        $this->template->headline = "Detail hry";
 		$game = $this->gamesRepository->get($gameId);
 		if (!$game) {
 			$this->errror('Stránka nebyla nalezena');
@@ -44,4 +46,61 @@ class GamesPresenter extends Nette\Application\UI\Presenter
         $genres = $this->gamesRepository->getGenre($game->id);
         $this->template->genres = $genres;
     }
+
+
+    protected function createComponentPostForm(): Form
+	{
+        $genres = array("play with friends", "hra pro jednoho", "simulator jizdy", "kockoholky");
+
+		$form = new Form;
+		$form->addText('name', 'Název')
+			->setRequired();
+        $form->addSelect('genre_id', 'Žánr:', $genres)
+            ->setPrompt('Vyber žánr');
+        $form->addText('price', 'Cena v KČ:')
+			->setRequired();
+        $form->addText('release_date', 'Datum vydání:')
+			->setRequired();
+        $form->addText('distributor', 'Distributor:')
+			->setRequired();
+        $form->addTextArea('description', 'Popis:')
+			->setRequired();
+
+		$form->addSubmit('send', 'Uložit a publikovat');
+		$form->onSuccess[] = [$this, 'postFormSucceeded'];
+
+		return $form;
+	}
+
+
+    public function postFormSucceeded(Form $form, array $values): void
+	{
+		if (!$this->getUser()->isLoggedIn()) {
+			$this->error('Pro přidaní hry se musíte přihlásit.');
+		}
+		
+		if ($gameId) {
+			$game = $this->database->table('game')->get($gameId);
+			$game->update($values);
+		} else {
+			$game = $this->gamesRepository->add($values);
+		}
+		
+	
+		$this->flashMessage('Hra byla publikována', 'success');
+		$this->redirect('Games:');
+	}
+
+    public function actionEdit(int $gameId): void
+	{
+		if (!$this->getUser()->isLoggedIn()) {
+			$this->redirect('Sign:in');
+		}
+
+		$game = $this->gamesRepository->get($gameId);
+		if (!$game) {
+			$this->error('Příspěvek nebyl nalezen');
+		}
+		$this['postForm']->setDefaults($game->toArray());
+	}
 }

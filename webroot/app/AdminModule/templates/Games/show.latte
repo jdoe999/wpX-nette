@@ -1,6 +1,9 @@
 {block content}
+
 <h1 n:block="name">{$game->name}</h1>
 
 <p>{$game->description}</p>
-<h3> Distributor </h3> {$game->distributor}
-<h3> ŽÁNR: </h3> {$genres->desc} !!!
+<b> Distributor </b> {$game->distributor} <br>
+<b> ŽÁNR: </b> {$game->genre->desc} 
+
+<a n:href="edit $game->id"><button type="button" class="btn btn-info">Editovat Hru</button></a>

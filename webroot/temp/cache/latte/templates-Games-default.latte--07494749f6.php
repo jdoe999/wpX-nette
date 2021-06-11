@@ -25,7 +25,7 @@ final class Template07494749f6 extends Latte\Runtime\Template
 	{
 		extract($this->params);
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === "extends") {
-			foreach (array_intersect_key(['genre2' => '3', 'game' => '25'], $this->params) as $ʟ_v => $ʟ_l) {
+			foreach (array_intersect_key(['genre2' => '3', 'game' => '26'], $this->params) as $ʟ_v => $ʟ_l) {
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}
@@ -49,8 +49,15 @@ final class Template07494749f6 extends Latte\Runtime\Template
 			echo '</a> ';
 			$iterations++;
 		}
-		echo '  <br> 
-	  <section class="content">
+		echo '  <br>  <br>
+';
+		if ($user->isLoggedIn()) {
+			echo '  <a href="';
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:create"));
+			echo '"><button style="float:right" type="button" class="btn btn-primary">Přidat novou hru</button></a>
+';
+		}
+		echo '	  <section class="content">
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
@@ -79,17 +86,17 @@ final class Template07494749f6 extends Latte\Runtime\Template
                     <td><a href="';
 			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("games:show", [$game->id]));
 			echo '">';
-			echo LR\Filters::escapeHtmlText($game->name) /* line 28 */;
+			echo LR\Filters::escapeHtmlText($game->name) /* line 29 */;
 			echo '</a></td>
                     <td>';
-			echo LR\Filters::escapeHtmlText($game->description) /* line 29 */;
+			echo LR\Filters::escapeHtmlText($game->description) /* line 30 */;
 			echo '
                     </td>
                     <td>';
-			echo LR\Filters::escapeHtmlText($game->genre->desc) /* line 31 */;
+			echo LR\Filters::escapeHtmlText($game->genre->desc) /* line 32 */;
 			echo '</td>
                     <td>';
-			echo LR\Filters::escapeHtmlText(($this->filters->date)($game->release_date, 'F j, Y')) /* line 32 */;
+			echo LR\Filters::escapeHtmlText(($this->filters->date)($game->release_date, 'F j, Y')) /* line 33 */;
 			echo '</td>
 					</tr>
 

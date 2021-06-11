@@ -40,4 +40,10 @@ class GamesRepository
 		return $this->database->table('game')->where('genre_id =', $genreId);
 	}
 
+	public function add(array $values){
+		$values['created_at'] = date("Y-m-d");
+		return $this->database->table('game')->insert($values);
+		
+	}
+
 }
